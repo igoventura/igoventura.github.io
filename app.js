@@ -208,10 +208,10 @@
     if (!el) { return; }
 
     var roles = [
-      'developer tooling',
-      'design systems',
-      'platform & infra',
-      'APIs that stay boring'
+      '.NET & Go',
+      'Kotlin & Android',
+      'Angular & React',
+      'gRPC contracts'
     ];
 
     if (reduced() || roles.length < 2) {

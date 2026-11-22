@@ -629,6 +629,23 @@ code {
   cursor: default;
 }
 
+.spoken {
+  margin-top: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 0.85rem 1.2rem;
+  font-size: 0.85rem;
+  color: var(--fg-dim);
+}
+.spoken-key {
+  color: var(--accent);
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  margin-right: 0.75rem;
+}
+
 /* ---------- 15. Experience timeline ---------- */
 .timeline {
   position: relative;
@@ -871,6 +888,23 @@ code {
 }
 .footer-note a { color: var(--fg-dim); }
 .footer-note a:hover { color: var(--accent); }
+
+/* "built with OpenCode" badge */
+.site-footer a.built-with {
+  color: var(--fg-dim);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.15rem 0.7rem;
+  white-space: nowrap;
+  transition: border-color var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+.site-footer a.built-with:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.built-with .oc { color: var(--accent); font-weight: 500; }
+.built-with:hover .oc { color: inherit; }
 
 /* ---------- 20. Toast ---------- */
 .toast {
