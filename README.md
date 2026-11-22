@@ -27,8 +27,8 @@ specifically so `file://` keeps working.
 
 | Token | Value | Where |
 |---|---|---|
-| `--bg` | `#0b0f10` | `styles.css` → `:root` |
-| `--accent` | `#3ddc97` | phosphor green — change this one line to re-theme |
+| `--bg` | `#181926` | `styles.css` → `:root` (Catppuccin Macchiato "Crust") |
+| `--accent` | `#8aadf4` | Catppuccin Blue — change this one line to re-theme |
 | `--mono` | JetBrains Mono | falls back to system monospace |
 
 Mobile-first. Breakpoints at 640 / 720 / 860 / 980 / 1000px. Motion is fully

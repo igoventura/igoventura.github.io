@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Terminal prompt favicon">
-  <rect width="64" height="64" rx="12" fill="#0b0f10"/>
-  <rect x="1" y="1" width="62" height="62" rx="11" fill="none" stroke="#1e2a2b" stroke-width="2"/>
-  <path d="M16 20 L28 32 L16 44" fill="none" stroke="#3ddc97" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="33" y="38" width="17" height="6" rx="1.5" fill="#3ddc97"/>
+  <rect width="64" height="64" rx="12" fill="#181926"/>
+  <rect x="1" y="1" width="62" height="62" rx="11" fill="none" stroke="#363a4f" stroke-width="2"/>
+  <path d="M16 20 L28 32 L16 44" fill="none" stroke="#8aadf4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="33" y="38" width="17" height="6" rx="1.5" fill="#8aadf4"/>
 </svg>
