@@ -13,6 +13,9 @@ on every push to `main`.
   desktop widths, with `prefers-reduced-motion: reduce`, and in print preview.
 - Find unfinished content with `Select-String -Path index.html -Pattern 'class="todo'`.
   Each `.todo` renders as a visible amber box and must not ship.
+- While any `.todo` is open, an `under construction` strip sits under the header:
+  the `.construction` block in `index.html`, its rules in `styles.css` §18, and the
+  `.construction` entry in the §24 print block. Remove all three with the last `.todo`.
 
 ## Hard constraints
 
@@ -39,7 +42,7 @@ on every push to `main`.
 
 | File | Role |
 |---|---|
-| `index.html` | All content and markup; most edits happen here (501 lines) |
+| `index.html` | All content and markup; most edits happen here (515 lines) |
 | `styles.css` | Numbered sections 1–24: tokens in `:root` (section 1), then reset → components → reduced motion → print |
 | `app.js` | Numbered IIFEs 1–9: toast, nav, scroll-spy, reveal, counters, typewriter, copy, back-to-top, footer year |
 | `assets/` | `favicon.svg`, `avatar.svg` (also referenced as `og:image`) |

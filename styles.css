@@ -832,9 +832,10 @@ code {
   color: var(--accent);
 }
 
-/* ---------- 18. TODO markers ----------
+/* ---------- 18. TODO markers + status strip ----------
    Amber, dashed, impossible to miss, so placeholder copy never
-   ships. Delete these rules once every .todo is filled in.     */
+   ships. Delete these rules (and the .construction block in
+   index.html) once every .todo is filled in.                */
 .todo {
   display: block;
   margin-top: 0.55rem;
@@ -876,6 +877,41 @@ code {
   color: var(--warn);
   border-bottom: 1px dashed rgba(238, 212, 159, 0.5);
 }
+
+/* Site-wide status strip, directly under the header. Same amber family
+   as the markers it stands in for, so removing one means removing both. */
+.construction {
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(to bottom, rgba(238, 212, 159, 0.07), transparent);
+}
+.construction-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.9rem;
+  padding-block: 0.7rem;
+}
+.construction-tag {
+  flex: none;
+  padding: 0.2rem 0.45rem;
+  border: 1px dashed rgba(238, 212, 159, 0.45);
+  border-radius: 3px;
+  background: rgba(238, 212, 159, 0.07);
+  color: var(--warn);
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+.construction-note {
+  font-size: 0.82rem;
+  color: var(--fg-dim);
+}
+.construction-note a { color: var(--warn); }
+.construction-note a:hover { color: var(--warn); text-decoration: none; }
 .section-lede strong { color: var(--warn); }
 
 /* ---------- 19. Footer ---------- */
@@ -1000,7 +1036,7 @@ code {
 @media print {
   body { background: #fff; color: #111; }
   .site-header, .scanlines, .to-top, .toast, .hero-actions,
-  .copy-btn, .section-foot, .cursor { display: none !important; }
+  .copy-btn, .section-foot, .cursor, .construction { display: none !important; }
   .terminal { border: 1px solid #ccc; box-shadow: none; }
   .card, .skill-group, .now-item, .stat, .about-card, .social {
     background: #fff;
