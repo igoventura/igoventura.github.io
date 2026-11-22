@@ -11,11 +11,11 @@ on every push to `main`.
 - Preview: open `index.html` directly, or `python -m http.server 8000`.
 - Manual check before committing: page works with JS disabled, at ~360px and
   desktop widths, with `prefers-reduced-motion: reduce`, and in print preview.
-- Find unfinished content with `Select-String -Path index.html -Pattern 'class="todo'`.
-  Each `.todo` renders as a visible amber box and must not ship.
-- While any `.todo` is open, an `under construction` strip sits under the header:
-  the `.construction` block in `index.html`, its rules in `styles.css` §18, and the
-  `.construction` entry in the §24 print block. Remove all three with the last `.todo`.
+- No `.todo` markers left. The `under construction` strip stays on purpose while
+  the experience numbers are missing: the `.construction` block in `index.html`,
+  its rules in `styles.css` §18, and the `.construction` entry in the §24 print
+  block. Remove all three when the copy is final.
+- Don't reintroduce placeholder copy, and don't invent facts to fill a gap.
 
 ## Hard constraints
 
@@ -42,7 +42,7 @@ on every push to `main`.
 
 | File | Role |
 |---|---|
-| `index.html` | All content and markup; most edits happen here (515 lines) |
+| `index.html` | All content and markup; most edits happen here (512 lines) |
 | `styles.css` | Numbered sections 1–24: tokens in `:root` (section 1), then reset → components → reduced motion → print |
 | `app.js` | Numbered IIFEs 1–9: toast, nav, scroll-spy, reveal, counters, typewriter, copy, back-to-top, footer year |
 | `assets/` | `favicon.svg`, `avatar.svg` (also referenced as `og:image`) |
@@ -60,11 +60,9 @@ on every push to `main`.
 ## Content accuracy
 
 - Never invent biographical facts, employers, dates, metrics, or project links.
-  The seven `.todo` boxes mark exactly where real content is missing — ask rather
-  than fabricate.
-- `README.md` is the content/deploy guide but drifts from the code: it says 8
-  TODO boxes (actual: 7) and still tells you to remove the Nimbus mention, which
-  now survives only as an HTML comment about the external GitHub profile. Trust
-  `grep` and the files over README prose.
+  The experience entries stop at scope on purpose: the numbers only Igo has were
+  left out rather than guessed. Ask rather than fabricate.
+- `README.md` is the content/deploy guide and can drift from the code; trust
+  `grep` and the files over its prose.
 - The `styles.css` header comment ("Alex Mercer") is leftover template text;
   ignore it when looking for ownership or naming.

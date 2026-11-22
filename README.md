@@ -52,26 +52,26 @@ JavaScript switched off (the `.js` class gates every hiding rule).
 
 Typewriter roles are the `roles` array at the top of block 6 in `app.js`.
 
-### Amber TODO boxes
+### Placeholder copy
 
-Anything with `class="todo"` is unfinished content — it renders as a dashed amber
-box labelled `todo` so it cannot slip into production unnoticed. To find them all:
-
-```powershell
-Select-String -Path index.html -Pattern 'class="todo'
-```
-
-Fill them in, delete the elements, then optionally delete the `.todo` rules from
-`styles.css` (section 18) so the styles can't come back.
+There are no `.todo` markers left. The `under construction` strip above the page
+is still there on purpose — the experience entries are missing the numbers that
+would make them worth reading. When that copy is final, delete the `.construction`
+block in `index.html` together with its rules in `styles.css` (section 18) and the
+`.construction` entry in the print block (section 24).
 
 ### Before this goes live
 
-- [ ] Every `class="todo"` element is gone (8 left; see the list in the editing guide)
+- [x] No placeholder copy left — every `.todo` box is gone
+- [ ] Under-construction strip removed once the experience numbers are written
+      (see "Placeholder copy" above for the three pieces to delete)
 - [x] GitHub handle confirmed against the API — `github.com/igoventura`, 31 public repos
 - [x] Your CV's mobile number is **not** on the page. If you ever add it, expect spam calls
 - [x] Project cards are six real public repositories, not placeholders
-- [ ] Add the personal sentence in About (`index.html` L141) — it's the part that
-      proves a human wrote this
+- [x] About ends with the personal line (cooking, dancing, videogames)
+- [ ] Experience entries stop at scope: no metrics were invented. Add real numbers
+      per role when you have them (latency, cost, incidents avoided, fleet scale,
+      team size)
 - [ ] Both CV download links were removed because they pointed at `#`. To bring one
       back, drop `resume.pdf` in the repo root and re-add the anchor
 - [ ] Your GitHub profile still advertises an employer you left (`company` says

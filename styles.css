@@ -832,54 +832,9 @@ code {
   color: var(--accent);
 }
 
-/* ---------- 18. TODO markers + status strip ----------
-   Amber, dashed, impossible to miss, so placeholder copy never
-   ships. Delete these rules (and the .construction block in
-   index.html) once every .todo is filled in.                */
-.todo {
-  display: block;
-  margin-top: 0.55rem;
-  padding: 0.45rem 0.65rem;
-  border: 1px dashed rgba(238, 212, 159, 0.45);
-  border-radius: 4px;
-  background: rgba(238, 212, 159, 0.07);
-  color: var(--warn);
-  font-size: 0.8rem;
-  font-style: italic;
-}
-.todo::before {
-  content: "todo ";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 0.66rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-right: 0.35rem;
-}
-/* Inside the timeline, the bullet marker must not fight the label. */
-.entry-points li.todo {
-  position: static;
-  padding-left: 0;
-  margin-bottom: 0.5rem;
-}
-.entry-points li.todo::before {
-  content: "todo";
-  position: static;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 0.66rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--warn);
-  margin-right: 0.4rem;
-}
-.todo-inline {
-  color: var(--warn);
-  border-bottom: 1px dashed rgba(238, 212, 159, 0.5);
-}
-
-/* Site-wide status strip, directly under the header. Same amber family
-   as the markers it stands in for, so removing one means removing both. */
+/* ---------- 18. Status strip ----------
+   Kept while the experience numbers are missing; delete this
+   block and the .construction markup in index.html together. */
 .construction {
   position: relative;
   z-index: 1;
@@ -912,7 +867,6 @@ code {
 }
 .construction-note a { color: var(--warn); }
 .construction-note a:hover { color: var(--warn); text-decoration: none; }
-.section-lede strong { color: var(--warn); }
 
 /* ---------- 19. Footer ---------- */
 .site-footer {
