@@ -66,16 +66,18 @@ Fill them in, delete the elements, then optionally delete the `.todo` rules from
 
 ### Before this goes live
 
-- [ ] Every `class="todo"` element is gone
-- [ ] Confirm the GitHub handle — `github.com/igoventura` is a **guess**, the
-      LinkedIn URL is the verified one from the CV
-- [ ] Your CV lists a mobile number. It is deliberately **not** on the page; if you
-      ever add it, expect spam calls
-- [ ] Replace the six placeholder project cards with real repos, or delete them.
-      Empty project sections are worse than no project section
-- [ ] Add the personal sentence in About — it's the part that proves a human
-      wrote this
-- [ ] Point `cat resume.pdf` and `download full CV` at a real file, or remove both
+- [ ] Every `class="todo"` element is gone (8 left; see the list in the editing guide)
+- [x] GitHub handle confirmed against the API — `github.com/igoventura`, 31 public repos
+- [x] Your CV's mobile number is **not** on the page. If you ever add it, expect spam calls
+- [x] Project cards are six real public repositories, not placeholders
+- [ ] Add the personal sentence in About (`index.html` L141) — it's the part that
+      proves a human wrote this
+- [ ] Both CV download links were removed because they pointed at `#`. To bring one
+      back, drop `resume.pdf` in the repo root and re-add the anchor
+- [ ] Your GitHub profile still advertises an employer you left (`company` says
+      `@nimbusitconsult`, bio says ".NET Developer at ESX & Founder at Nimbus IT
+      Consult"). The page omits it; fix the profile separately
+- [ ] `hireable: true` is set on GitHub while this page says "coffee chats". Pick one
 - [ ] If the employer on the page is current and non-obvious, a quick read of your
       employment agreement's public-posting clause is cheap insurance
 
