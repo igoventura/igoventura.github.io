@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Igo Ventura — Senior Software Engineer</title>
+<meta name="description" content="Igo Ventura is a senior software engineer at DoorDash with 13+ years across .NET, Kotlin, React and Node.js — full-stack work from Rio to São Paulo to remote.">
+<meta name="author" content="Igo Ventura">
+<link rel="canonical" href="https://igoventura.dev/">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://igoventura.dev/">
+<meta property="og:site_name" content="igoventura.dev">
+<meta property="og:title" content="Igo Ventura — Senior Software Engineer">
+<meta property="og:description" content="Senior software engineer at DoorDash. 13+ years across .NET, Kotlin, React and Node.js.">
+<meta property="og:image" content="assets/avatar.svg">
+<meta property="og:profile:first_name" content="Igo">
+<meta property="og:profile:last_name" content="Ventura">
+<meta property="og:profile:username" content="igoventura">
+<meta name="theme-color" content="#0b0f10">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<!-- Sets a flag so reveal animations only hide content when JS is actually available. -->
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+
+<a class="skip-link" href="#main">skip to content</a>
+<div class="scanlines" aria-hidden="true"></div>
+
+<!-- ============================================ NAV -->
+<header class="site-header">
+  <nav class="nav container" aria-label="Primary">
+    <a class="brand" href="#top">igoventura<span class="brand-tld">.dev</span><span class="cursor" aria-hidden="true">▊</span></a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+      <span class="nav-toggle-text">menu</span>
+      <span class="nav-toggle-icon" aria-hidden="true"></span>
+    </button>
+
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="#about">about</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#skills">skills</a></li>
+      <li><a href="#experience">experience</a></li>
+      <li><a class="nav-cta" href="#contact">contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ======================================== HERO -->
+  <section class="hero container" aria-labelledby="hero-title">
+    <div class="terminal">
+      <div class="terminal-bar" aria-hidden="true">
+        <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+        <span class="term-title">igo@igoventura: ~/portfolio</span>
+      </div>
+      <div class="terminal-body">
+        <p class="term-line"><span class="prompt">$</span> whoami</p>
+        <h1 id="hero-title" class="hero-name">Igo&nbsp;Ventura</h1>
+
+        <p class="hero-role">
+          <span class="prompt">&gt;</span>
+          senior software engineer
+          <span class="role-sep">·</span>
+          <span class="typewriter" id="typewriter">.NET &amp; Kotlin</span><span class="cursor" aria-hidden="true">▊</span>
+        </p>
+
+        <p class="hero-blurb">
+          Thirteen years of shipping software for people who will never meet me:
+          delivery apps, fintech rails, logistics platforms. I work across
+          <code>.NET&nbsp;Core</code>, <code>Kotlin</code>, <code>React</code> and
+          <code>Node.js</code>, and I spend a lot of my time teaching agents to do the
+          boring half of the job properly.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">./projects</a>
+          <!-- EDIT: upload a real CV and point this at it, or delete the link -->
+          <a class="btn" href="#" download>cat resume.pdf</a>
+          <a class="btn" href="#contact">./contact</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================= STATS -->
+  <section class="stats container" aria-label="Career highlights">
+    <dl class="stats-grid">
+      <!-- Every number here is countable from the CV. Swap in GitHub stats later
+           if you link your account. Text content is the real value; JS animates to it. -->
+      <div class="stat reveal">
+        <dd><span data-count="13" data-suffix="+">13+</span></dd>
+        <dt>years shipping</dt>
+      </div>
+      <div class="stat reveal">
+        <dd><span data-count="10">10</span></dd>
+        <dt>companies</dt>
+      </div>
+      <div class="stat reveal">
+        <dd><span data-count="3">3</span></dd>
+        <dt>certifications</dt>
+      </div>
+      <div class="stat reveal">
+        <dd><span data-count="2">2</span></dd>
+        <dt>languages spoken</dt>
+      </div>
+    </dl>
+  </section>
+
+  <!-- ======================================= ABOUT -->
+  <section id="about" class="section container" aria-labelledby="about-title">
+    <h2 class="section-title reveal" id="about-title">~/about</h2>
+    <div class="about-grid">
+      <div class="about-prose reveal">
+        <p>
+          I started professionally in 2012 in Fortaleza, writing software for healthcare
+          and education companies, and I've been on the full-stack side of things ever
+          since. I went from intern to tech lead to senior engineer, which mostly means
+          I've made every category of mistake at least once and have opinions about
+          avoiding them.
+        </p>
+        <p>
+          My core stack is <strong>.NET Core</strong> and <strong>Kotlin</strong> on the
+          backend with <strong>React</strong> and <strong>Node.js</strong> on the front.
+          I've built and maintained Web APIs at scale, shipped Android clients, and led
+          small teams through rewrites. Lately a large part of my workflow is agentic —
+          Claude Code and its subagents do a real share of my scaffolding, test writing
+          and migration legwork.
+        </p>
+        <p>
+          Based in São Paulo. I've worked with teams in Brazil, the US and fully remote,
+          so I'm comfortable being the asynchronous one on the call.
+        </p>
+        <!-- EDIT: add a personal line or two. This is what makes a portfolio not
+             look auto-generated — hobby, sport, dog, whatever is actually yours. -->
+        <p class="todo">Add one human sentence here: something you do that isn't software.</p>
+      </div>
+
+      <aside class="about-card reveal" aria-label="Quick facts">
+        <img class="about-avatar" src="assets/avatar.svg" alt="Monogram portrait of Igo Ventura" width="160" height="160">
+        <dl class="facts">
+          <div><dt>based in</dt><dd>São Paulo, BR</dd></div>
+          <div><dt>day job</dt><dd>Sr Engineer @ DoorDash</dd></div>
+          <div><dt>stack</dt><dd>.NET · Kotlin · React · Node</dd></div>
+          <div><dt>speaks</dt><dd>Português · English</dd></div>
+          <!-- EDIT: only claim availability if that's true for you right now -->
+          <div><dt>open to</dt><dd class="todo-inline">coffee chats</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ======================================== NOW -->
+  <section id="now" class="section container" aria-labelledby="now-title">
+    <h2 class="section-title reveal" id="now-title">~/now</h2>
+    <!-- EDIT: this section is what keeps a portfolio feeling alive. Refresh it
+         whenever something actually changes; delete a card rather than lie. -->
+    <div class="now-grid">
+      <article class="now-item reveal">
+        <h3><span class="live-dot" aria-hidden="true"></span>building</h3>
+        <p>Agent workflows that survive code review — Claude Code subagents split across
+           explore, implement and test, with the human still owning the merge.</p>
+      </article>
+      <article class="now-item reveal">
+        <h3>learning</h3>
+        <p class="todo">What are you actually studying right now? One concrete thing.</p>
+      </article>
+      <article class="now-item reveal">
+        <h3>reading</h3>
+        <p class="todo">A book, a spec, a codebase you've been reading. Anything real.</p>
+      </article>
+      <article class="now-item reveal">
+        <h3>working on</h3>
+        <p class="todo">A side project, an open-source PR, a talk, a blog post.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- =================================== PROJECTS -->
+  <section id="projects" class="section container" aria-labelledby="projects-title">
+    <h2 class="section-title reveal" id="projects-title">~/projects</h2>
+    <p class="section-lede reveal">
+      <strong>PLACEHOLDERS.</strong> These six cards are structural samples in your stack —
+      swap in real repos or delete the ones you can't back up. Duplicate an
+      <code>&lt;article class="card"&gt;</code> block to add another.
+    </p>
+
+    <div class="card-grid">
+
+      <!-- BEGIN project card — duplicate this block -->
+      <article class="card project reveal">
+        <header class="card-head">
+          <h3 class="card-title"><a href="https://github.com/igoventura/">project-name</a></h3>
+          <span class="card-year">2025</span>
+        </header>
+        <p class="card-desc todo">What it does, and the one number that proves it works.
+          "Parses a 40k-line ledger in 30ms", not "a useful tool".</p>
+        <ul class="tags">
+          <li>.NET 8</li><li>Minimal API</li><li>PostgreSQL</li><li>Docker</li>
+        </ul>
+        <footer class="card-links">
+          <a href="https://github.com/igoventura/">source ↗</a>
+          <a href="#">live demo ↗</a>
+        </footer>
+      </article>
+      <!-- END project card -->
+
+      <article class="card project reveal">
+        <header class="card-head">
+          <h3 class="card-title"><a href="https://github.com/igoventura/">android-client</a></h3>
+          <span class="card-year">2024</span>
+        </header>
+        <p class="card-desc todo">Replace with a real Android app you shipped.</p>
+        <ul class="tags">
+          <li>Kotlin</li><li>Jetpack Compose</li><li>Coroutines</li><li>Retrofit</li>
+        </ul>
+        <footer class="card-links">
+          <a href="https://github.com/igoventura/">source ↗</a>
+          <a href="#">play store ↗</a>
+        </footer>
+      </article>
+
+      <article class="card project reveal">
+        <header class="card-head">
+          <h3 class="card-title"><a href="https://github.com/igoventura/">agent-workflows</a></h3>
+          <span class="card-year">2025</span>
+        </header>
+        <p class="card-desc todo">Your Claude Code / subagent setup, if you're willing to open-source it.</p>
+        <ul class="tags">
+          <li>Claude Code</li><li>Subagents</li><li>MCP</li><li>TypeScript</li>
+        </ul>
+        <footer class="card-links">
+          <a href="https://github.com/igoventura/">source ↗</a>
+        </footer>
+      </article>
+
+      <article class="card project reveal">
+        <header class="card-head">
+          <h3 class="card-title"><a href="https://github.com/igoventura/">node-service-kit</a></h3>
+          <span class="card-year">2023</span>
+        </header>
+        <p class="card-desc todo">A starter, a library, a CLI — something you actually maintain.</p>
+        <ul class="tags">
+          <li>Node.js</li><li>TypeScript</li><li>Fastify</li><li>Redis</li>
+        </ul>
+        <footer class="card-links">
+          <a href="https://github.com/igoventura/">source ↗</a>
+          <a href="#">npm ↗</a>
+        </footer>
+      </article>
+
+      <article class="card project reveal">
+        <header class="card-head">
+          <h3 class="card-title"><a href="https://github.com/igoventura/">react-dashboard</a></h3>
+          <span class="card-year">2023</span>
+        </header>
+        <p class="card-desc todo">Frontend work: a real dashboard, admin panel or component library.</p>
+        <ul class="tags">
+          <li>React</li><li>Vite</li><li>WebSockets</li><li>a11y</li>
+        </ul>
+        <footer class="card-links">
+          <a href="https://github.com/igoventura/">source ↗</a>
+          <a href="#">live ↗</a>
+        </footer>
+      </article>
+
+      <article class="card project reveal">
+        <header class="card-head">
+          <h3 class="card-title"><a href="https://github.com/igoventura/">dotfiles</a></h3>
+          <span class="card-year">2020–</span>
+        </header>
+        <p class="card-desc todo">Editor config, scripts, the machine setup you'd rebuild today.</p>
+        <ul class="tags">
+          <li>PowerShell</li><li>Neovim</li><li>VS Code</li><li>just</li>
+        </ul>
+        <footer class="card-links">
+          <a href="https://github.com/igoventura/">source ↗</a>
+        </footer>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===================================== SKILLS -->
+  <section id="skills" class="section container" aria-labelledby="skills-title">
+    <h2 class="section-title reveal" id="skills-title">~/skills</h2>
+    <p class="section-lede reveal">No percentage bars — a number next to a skill means nothing.</p>
+
+    <div class="skills-grid">
+      <section class="skill-group reveal" aria-labelledby="sk-lang">
+        <h3 id="sk-lang">languages</h3>
+        <ul class="tags">
+          <li>C#</li><li>Kotlin</li><li>TypeScript</li><li>JavaScript</li><li>SQL</li><li>HTML5</li><li>CSS3</li>
+        </ul>
+      </section>
+      <section class="skill-group reveal" aria-labelledby="sk-be">
+        <h3 id="sk-be">backend</h3>
+        <ul class="tags">
+          <li>.NET Core</li><li>ASP.NET Core Web API</li><li>Node.js</li><li>REST API design</li><li>Dependency injection</li>
+        </ul>
+      </section>
+      <section class="skill-group reveal" aria-labelledby="sk-fe">
+        <h3 id="sk-fe">frontend &amp; mobile</h3>
+        <ul class="tags">
+          <li>React</li><li>Android</li><li>Jetpack Compose</li><li>State management</li><li>Responsive CSS</li>
+        </ul>
+      </section>
+      <section class="skill-group reveal" aria-labelledby="sk-ai">
+        <h3 id="sk-ai">agentic development</h3>
+        <ul class="tags">
+          <li>Claude Code</li><li>Claude subagents</li><li>Prompt/context design</li><li>MCP</li>
+        </ul>
+      </section>
+      <section class="skill-group reveal" aria-labelledby="sk-craft">
+        <h3 id="sk-craft">practice</h3>
+        <ul class="tags">
+          <li>Full-stack delivery</li><li>Tech leading</li><li>Code review</li><li>Migrations &amp; refactors</li><li>Mentoring</li>
+        </ul>
+      </section>
+      <section class="skill-group reveal" aria-labelledby="sk-spoken">
+        <h3 id="sk-spoken">spoken</h3>
+        <ul class="tags">
+          <li>Português — native</li><li>English — full professional</li>
+        </ul>
+      </section>
+    </div>
+  </section>
+
+  <!-- ================================== EXPERIENCE -->
+  <section id="experience" class="section container" aria-labelledby="experience-title">
+    <h2 class="section-title reveal" id="experience-title">~/experience</h2>
+    <p class="section-lede reveal">
+      Roles, dates and titles come from my CV. The highlighted lines need the outcomes
+      only I know — fill those in before this goes live.
+    </p>
+
+    <ol class="timeline">
+      <li class="entry reveal">
+        <div class="entry-dates"><time datetime="2025-08">Aug 2025</time> — present</div>
+        <h3 class="entry-role">Senior Software Engineer</h3>
+        <p class="entry-org">DoorDash · São Paulo, BR</p>
+        <ul class="entry-points">
+          <li>Delivery business, full-stack.</li>
+          <li class="todo">Add 2–3 outcomes with numbers: latency, cost, incidents avoided, scope owned.</li>
+        </ul>
+      </li>
+
+      <li class="entry reveal">
+        <div class="entry-dates"><time datetime="2024-11">Nov 2024</time> — <time datetime="2025-07">Jul 2025</time></div>
+        <h3 class="entry-role">Senior Software Engineer</h3>
+        <p class="entry-org">Finexio · Orlando, FL, US</p>
+        <ul class="entry-points">
+          <li>Payments and banking integrations — API work between financial institutions.</li>
+          <li class="todo">Which rails you owned, and what changed after you did.</li>
+        </ul>
+      </li>
+
+      <li class="entry reveal">
+        <div class="entry-dates"><time datetime="2024-03">Mar 2024</time> — <time datetime="2024-11">Nov 2024</time></div>
+        <h3 class="entry-role">Senior Software Engineer</h3>
+        <p class="entry-org">Truelogic Software · São Paulo, BR</p>
+        <ul class="entry-points">
+          <li class="todo">Contract delivery work — name the client-facing deliverable you're allowed to mention.</li>
+        </ul>
+      </li>
+
+      <li class="entry reveal">
+        <div class="entry-dates"><time datetime="2023-01">Jan 2023</time> — <time datetime="2024-03">Mar 2024</time></div>
+        <h3 class="entry-role">Software Developer</h3>
+        <p class="entry-org">Fulcrum Digital Inc · São Paulo, BR</p>
+        <ul class="entry-points">
+          <li class="todo">One line on the product, one on what you shipped.</li>
+        </ul>
+      </li>
+
+      <li class="entry reveal">
+        <div class="entry-dates"><time datetime="2022-07">Jul 2022</time> — <time datetime="2023-01">Jan 2023</time></div>
+        <h3 class="entry-role">Specialist Software Developer</h3>
+        <p class="entry-org">Localiza · São Paulo, BR</p>
+        <ul class="entry-points">
+          <li>Vehicle rental and fleet systems — one of the largest logistics platforms in Latin America.</li>
+          <li class="todo">Scale numbers are good advertising here: vehicles, transactions, requests/sec.</li>
+        </ul>
+      </li>
+
+      <li class="entry reveal">
+        <div class="entry-dates"><time datetime="2018-09">Sep 2018</time> — <time datetime="2022-07">Jul 2022</time></div>
+        <h3 class="entry-role">Tech Lead <span class="arrow">←</span> Software Engineer</h3>
+        <p class="entry-org">ESX · São Paulo &amp; Greater Rio de Janeiro, BR</p>
+        <ul class="entry-points">
+          <li><strong>Tech Lead</strong> · Jan 2022 – Jul 2022 — São Paulo.</li>
+          <li><strong>Software Engineer</strong> · Sep 2018 – Jan 2022 — Greater Rio de Janeiro.</li>
+          <li class="todo">Leading a team is a different story from writing code. Say what you led: how many people, what delivery.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <!-- EDIT: earlier roles, kept compact. Delete anything older than you want to show. -->
+    <div class="earlier reveal">
+      <h3>earlier</h3>
+      <ul>
+        <li><span>Orbit Big Data Analytics</span><span>Software Analyst</span><time datetime="2018-05">May 2018</time> – <time datetime="2018-09">Sep 2018</time></li>
+        <li><span>DF Medica — Dna &amp; Wellness Solutions</span><span>Software Analyst</span><time datetime="2017-01">Jan 2017</time> – <time datetime="2018-05">May 2018</time></li>
+        <li><span>SAS — Sistema Ari de Sá</span><span>Software Analyst · Intern</span><time datetime="2015-02">Feb 2015</time> – <time datetime="2017-01">Jan 2017</time></li>
+        <li><span>SCITUS</span><span>Software Developer</span><time datetime="2012-08">Aug 2012</time> – <time datetime="2015-02">Feb 2015</time></li>
+      </ul>
+    </div>
+
+    <!-- ============================ EDUCATION & CERTS -->
+    <div class="cred-grid reveal">
+      <section class="cred" aria-labelledby="edu-title">
+        <h3 id="edu-title">education</h3>
+        <p class="cred-item"><strong>Tecnólogo, Software Analysis and Development</strong><br>
+          Estácio · <time datetime="2024-01">Jan 2024</time> – <time datetime="2025-03">Mar 2025</time></p>
+      </section>
+      <section class="cred" aria-labelledby="cert-title">
+        <h3 id="cert-title">certifications</h3>
+        <ul class="cred-list">
+          <li>Building Web APIs with ASP.NET Core</li>
+          <li>Microsoft Certified Professional</li>
+          <li>Exam 480 — Programming in HTML5 with JavaScript and CSS3</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- EDIT: delete this block if you don't want a CV download -->
+    <p class="section-foot reveal">
+      <a class="btn" href="#" download>download full CV (.pdf)</a>
+    </p>
+  </section>
+
+  <!-- ==================================== CONTACT -->
+  <section id="contact" class="section container" aria-labelledby="contact-title">
+    <h2 class="section-title reveal" id="contact-title">~/contact</h2>
+
+    <div class="contact-grid">
+      <div class="contact-prose reveal">
+        <p>
+          Recruiter, colleague or someone stuck on a .NET migration at 3am — the inbox is
+          open. I answer anything that isn't a template.
+        </p>
+
+        <p class="email-row">
+          <a class="email" href="mailto:igoventura@outlook.com">igoventura@outlook.com</a>
+          <button class="copy-btn" type="button" data-copy="igoventura@outlook.com" aria-label="copy igoventura@outlook.com">
+            <svg class="copy-icon" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true" focusable="false">
+              <rect x="5.5" y="5.5" width="8" height="8" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/>
+              <path d="M10.5 3.5H3.5a1 1 0 0 0-1 1v7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+            <span>copy</span>
+          </button>
+        </p>
+      </div>
+
+      <ul class="social reveal">
+        <li><span class="social-key">linkedin</span> <a href="https://www.linkedin.com/in/igoventura">in/igoventura ↗</a></li>
+        <li><span class="social-key">github</span> <a href="https://github.com/igoventura">github.com/igoventura ↗</a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© <span id="year">2026</span> Igo Ventura</p>
+    <p class="footer-note">Hand-written HTML &amp; CSS · no framework, no tracker · <a href="#top">back to top ↑</a></p>
+  </div>
+</footer>
+
+<!-- ===================================== OVERLAYS -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<button class="to-top" id="to-top" type="button" aria-label="Back to top">↑</button>
+
+<script src="app.js" defer></script>
+</body>
+</html>

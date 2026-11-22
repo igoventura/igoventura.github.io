@@ -1,0 +1,12 @@
+# Normalise line endings so the repo is identical on every machine.
+# Without this, Git rewrites the HTML/CSS/JS to CRLF on checkout here.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.woff binary
+*.woff2 binary

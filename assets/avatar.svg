@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Monogram portrait of Igo Ventura">
+  <rect width="160" height="160" fill="#111718"/>
+  <g stroke="#1e2a2b" stroke-width="1">
+    <path d="M0 20 H160 M0 40 H160 M0 60 H160 M0 80 H160 M0 100 H160 M0 120 H160 M0 140 H160"/>
+    <path d="M20 0 V160 M40 0 V160 M60 0 V160 M80 0 V160 M100 0 V160 M120 0 V160 M140 0 V160"/>
+  </g>
+  <rect x="8" y="8" width="144" height="144" fill="none" stroke="#3ddc97" stroke-width="2"/>
+  <text x="80" y="97" text-anchor="middle"
+        font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+        font-size="62" font-weight="700" letter-spacing="2" fill="#c8d3d0">IV</text>
+  <rect x="112" y="112" width="16" height="6" rx="1.5" fill="#3ddc97"/>
+</svg>

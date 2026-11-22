@@ -1,0 +1,22 @@
+# OS junk
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Local-only overrides — put private notes or WIP here
+*.local
+*.local.css
+notes/
+
+# Hosts / tooling, if you ever add them
+.netlify
+.wrangler/
+.vercel/
+node_modules/
