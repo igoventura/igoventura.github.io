@@ -45,12 +45,32 @@ JavaScript switched off (the `.js` class gates every hiding rule).
 | Stats strip | `.stats-grid` — `data-count` is the target number |
 | About + quick facts | `#about` |
 | Now | `#now` |
-| Projects | `#projects` — duplicate an `<article class="card">` to add one |
+| Projects | `#projects` — duplicate an `<article class="card">` to add one. Tagged `data-local-only`: hidden on the deployed site (see "Local-only sections") |
 | Skills | `#skills` — one `.skill-group` per category |
 | Experience + earlier roles + education/certs | `#experience` |
 | Contact + social links | `#contact` |
 
 Typewriter roles are the `roles` array at the top of block 6 in `app.js`.
+
+### Local-only sections
+
+There is no build step, so the "environment" is simply the address the page is
+opened from. The inline script in `<head>` marks `<html>` with `local` or
+`remote` — `file://`, `localhost` and any LAN address count as local — and
+`styles.css` (section 23) hides every `data-local-only` node when the class is
+`remote`.
+
+`~/projects` is tagged that way: the six cards are still under review, so the
+section, its nav entry and the `./projects` hero button all carry the attribute.
+Viewed locally the section lede also gets a `local only` chip as a reminder.
+
+- Review on the live site: append `?local=1` to the URL.
+- Hide it while working at home: `?local=0`.
+- Publish it: delete the three `data-local-only` attributes. Nothing else changes.
+
+Hiding is presentation only. The markup is still served, so view-source,
+crawlers and anyone who guesses the anchor still see the cards — anything you
+truly do not want public must not be committed in the first place.
 
 ### Placeholder copy
 
@@ -58,7 +78,7 @@ There are no `.todo` markers left. The `under construction` strip above the page
 is still there on purpose — the experience entries are missing the numbers that
 would make them worth reading. When that copy is final, delete the `.construction`
 block in `index.html` together with its rules in `styles.css` (section 18) and the
-`.construction` entry in the print block (section 24).
+`.construction` entry in the print block (section 25).
 
 ### Before this goes live
 
@@ -68,6 +88,9 @@ block in `index.html` together with its rules in `styles.css` (section 18) and t
 - [x] GitHub handle confirmed against the API — `github.com/igoventura`, 31 public repos
 - [x] Your CV's mobile number is **not** on the page. If you ever add it, expect spam calls
 - [x] Project cards are six real public repositories, not placeholders
+- [ ] `~/projects` is hidden on the deployed site while the cards are reviewed —
+      delete the three `data-local-only` attributes to publish it (see
+      "Local-only sections")
 - [x] About ends with the personal line (cooking, dancing, videogames)
 - [ ] Experience entries stop at scope: no metrics were invented. Add real numbers
       per role when you have them (latency, cost, incidents avoided, fleet scale,

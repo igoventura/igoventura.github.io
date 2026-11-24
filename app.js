@@ -76,7 +76,11 @@
     var targets = links
       .map(function (link) {
         var el = document.querySelector(link.getAttribute('href'));
-        return el ? { link: link, el: el } : null;
+        // Skip sections that are hidden — the env flag can take a whole
+        // section out of the page (styles.css §23), and a display:none
+        // target has no offsetTop to track.
+        if (!el || el.offsetParent === null) { return null; }
+        return { link: link, el: el };
       })
       .filter(Boolean);
 

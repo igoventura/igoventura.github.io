@@ -19,8 +19,35 @@
 <meta property="og:profile:username" content="igoventura">
 <meta name="theme-color" content="#181926">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<!-- Sets a flag so reveal animations only hide content when JS is actually available. -->
-<script>document.documentElement.classList.add('js');</script>
+<!-- Env flags. `js` lets the reveal animations hide content only when JS is
+     actually available; `local` / `remote` say where the page is being served
+     from, so anything tagged `data-local-only` (today: ~/projects) is hidden
+     on the deployed site and kept while reviewing at home. Override either
+     way with ?local=1 on the live site, ?local=0 locally. -->
+<script>
+  (function (root) {
+    root.classList.add('js');
+
+    var host = location.hostname;
+
+    // Local means: opened straight from disk, from the in-app preview, or from
+    // a loopback / private-network address. Everything else is the deployed
+    // site. IPv4 is matched by prefix so 192.168.x.x and 10.x count, but a
+    // public host served by IP does not.
+    var privateIp = /^(?:127\.|10\.|0\.|192\.168\.|172\.(?:1[6-9]|2[0-9]|3[01])\.)/;
+    var local = location.protocol === 'file:' ||
+                location.protocol === 'oc-preview:' ||
+                host === '' ||
+                host === 'localhost' || /\.local(host)?$/.test(host) ||
+                host === '[::1]' ||
+                privateIp.test(host);
+
+    var forced = /[?&]local=([^&]*)/.exec(location.search);
+    if (forced) { local = forced[1] === '1' || forced[1] === 'true'; }
+
+    root.classList.add(local ? 'local' : 'remote');
+  }(document.documentElement));
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
@@ -43,7 +70,7 @@
 
     <ul class="nav-menu" id="nav-menu">
       <li><a href="#about">about</a></li>
-      <li><a href="#projects">projects</a></li>
+      <li data-local-only><a href="#projects">projects</a></li>
       <li><a href="#skills">skills</a></li>
       <li><a href="#experience">experience</a></li>
       <li><a class="nav-cta" href="#contact">contact</a></li>
@@ -95,7 +122,7 @@
         </p>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#projects">./projects</a>
+          <a class="btn btn-primary" href="#projects" data-local-only>./projects</a>
           <a class="btn" href="#contact">./contact</a>
         </div>
       </div>
@@ -204,9 +231,12 @@
   </section>
 
   <!-- =================================== PROJECTS -->
-  <section id="projects" class="section container" aria-labelledby="projects-title">
+  <!-- Tagged data-local-only: hidden on the deployed site by the env flag
+       in <head> (see styles.css §23) until the copy is signed off. -->
+  <section id="projects" class="section container" data-local-only aria-labelledby="projects-title">
     <h2 class="section-title reveal" id="projects-title">~/projects</h2>
     <p class="section-lede reveal">
+      <span class="local-flag">local only</span>
       Real repositories, all public. Duplicate an
       <code>&lt;article class="card"&gt;</code> block to add another.
     </p>

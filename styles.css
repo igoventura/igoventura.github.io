@@ -970,7 +970,39 @@ code {
   transform: none;
 }
 
-/* ---------- 23. Reduced motion ---------- */
+/* ---------- 23. Local-only sections (env flag) ----------
+   The inline script in index.html marks <html> with `local` or `remote`.
+   Anything tagged `data-local-only` is hidden on the deployed site; with
+   JavaScript off neither class is set, so the page stays complete — the
+   same rule the .js gating in section 22 follows. Tag the section, its
+   nav entry and any button that points at it. */
+.remote [data-local-only] { display: none !important; }
+
+/* With ./projects out of the hero, ./contact takes over as the primary. */
+.remote .hero-actions .btn:last-child {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* Shown only when viewing locally, so it is obvious what the deploy hides. */
+.local-flag {
+  display: none;
+  margin-right: 0.6rem;
+  padding: 0.15rem 0.45rem;
+  border: 1px dashed var(--border-hi);
+  border-radius: 3px;
+  color: var(--accent);
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+.local .local-flag { display: inline-block; }
+
+/* ---------- 24. Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
@@ -986,11 +1018,12 @@ code {
   .btn:hover { transform: none; }
 }
 
-/* ---------- 24. Print ---------- */
+/* ---------- 25. Print ---------- */
 @media print {
   body { background: #fff; color: #111; }
   .site-header, .scanlines, .to-top, .toast, .hero-actions,
-  .copy-btn, .section-foot, .cursor, .construction { display: none !important; }
+  .copy-btn, .section-foot, .cursor, .construction,
+  .local-flag { display: none !important; }
   .terminal { border: 1px solid #ccc; box-shadow: none; }
   .card, .skill-group, .now-item, .stat, .about-card, .social {
     background: #fff;
