@@ -13,7 +13,7 @@ on every push to `main`.
   desktop widths, with `prefers-reduced-motion: reduce`, and in print preview.
 - No `.todo` markers left. The `under construction` strip stays on purpose while
   the experience numbers are missing: the `.construction` block in `index.html`,
-  its rules in `styles.css` §18, and the `.construction` entry in the §25 print
+  its rules in `styles.css` §17, and the `.construction` entry in the §24 print
   block. Remove all three when the copy is final.
 - Don't reintroduce placeholder copy, and don't invent facts to fill a gap.
 
@@ -44,26 +44,35 @@ on every push to `main`.
 
 | File | Role |
 |---|---|
-| `index.html` | All content and markup; most edits happen here (533 lines) |
-| `styles.css` | Numbered sections 1–25: tokens in `:root` (section 1), then reset → components → env flag → reduced motion → print |
-| `app.js` | Numbered IIFEs 1–9: toast, nav, scroll-spy, reveal, counters, typewriter, copy, back-to-top, footer year |
+| `index.html` | All content and markup; most edits happen here (475 lines) |
+| `styles.css` | Numbered sections 1–24: tokens in `:root` (section 1), then reset → components → env flag → reduced motion → print |
+| `app.js` | Numbered IIFEs 1–7: toast, nav, scroll-spy, reveal, copy, back-to-top, footer year |
 | `assets/` | `favicon.svg`, `avatar.svg` (also referenced as `og:image`) |
 
+- `<main class="main">` is the page grid: `.masthead` spans the top, `.flow`
+  holds every `section` in the reading column, and `.rail` (the quick-facts
+  card) sits beside it and sticks on scroll at ≥1100px. Below that width the
+  rail drops under the masthead. Column width is `--col`, rail width
+  `--rail-w` — both in `styles.css` §6.
 - Re-theme by changing `--accent` in `styles.css: :root`. Other tokens (`--bg`,
-  `--mono`, `--maxw`, `--nav-h`) live there too.
-- Add a project by duplicating an `<article class="card">` inside `#projects`;
-  add a skill category by duplicating a `.skill-group` inside `#skills`.
+  `--mono`, `--col`, `--rail-w`, `--measure`, `--nav-h`) live there too.
+- Add a project by duplicating either a featured `<article class="card">` in
+  `.featured` (room for a description, tags and two links) or a compact
+  `<li class="work-row">` in `.work-list` (title link, one paragraph, tags).
+  Add a skill category by duplicating a `.stack-row` inside `.stack`.
 - Keep a block out of the deployed site by tagging it `data-local-only`: the
   env flag in `<head>` hides those nodes under `html.remote` (see `styles.css`
-  §23). Tag the section, its `<li>` in `.nav-menu` and any button that points at
-  it, or the nav entry and hero CTA scroll to nothing. `#projects` is tagged
+  §22). Tag the section, its `<li>` in `.nav-menu` and any button that points at
+  it, or the nav entry and masthead CTA scroll to nothing. `#projects` is tagged
   this way until its copy is signed off — drop the three attributes to publish.
   `?local=1` / `?local=0` override the address check. This is presentation
   only: the markup is still served, so anything genuinely private has to stay
   out of the repo entirely.
-- Typewriter roles are the `roles` array in `app.js` block 6.
-- Stats: `data-count` drives the animation, but the visible text is the real
-  fallback — change both together. `data-format="k"` renders e.g. `1.2k`.
+- The positioning line in the masthead is static text. The typewriter and the
+  animated stats row from `main` are deliberately absent here: the role they
+  sold is stated once, in prose, and the numbers that were animated
+  (public repos, certifications, languages) live in the sections that
+  actually document them.
 - Scroll-spy is derived from `.nav-menu a[href^="#"]`; a nav link only works if
   its target section exists and has the matching `id`.
 
@@ -74,5 +83,6 @@ on every push to `main`.
   left out rather than guessed. Ask rather than fabricate.
 - `README.md` is the content/deploy guide and can drift from the code; trust
   `grep` and the files over its prose.
-- The `styles.css` header comment ("Alex Mercer") is leftover template text;
-  ignore it when looking for ownership or naming.
+- The `styles.css` header comment names this branch's shape ("layout
+  experiment"); on `main` it still carries leftover template text ("Alex
+  Mercer") — ignore that when looking for ownership or naming.

@@ -146,117 +146,13 @@
     items.forEach(function (el) { observer.observe(el); });
   }());
 
-  /* ---------------------------------------------------------
-     5. Stat counters.
-        The real number already lives in the HTML, so the stats
-        are correct without JS — this only animates up to it.
-     --------------------------------------------------------- */
-  (function counters() {
-    var nodes = $$('[data-count]');
-    if (!nodes.length) { return; }
-
-    function render(el, value) {
-      var fmt = el.getAttribute('data-format');
-      var suffix = el.getAttribute('data-suffix') || '';
-      var text;
-      if (fmt === 'k') {
-        text = (value / 1000).toFixed(1).replace(/\.0$/, '') + 'k';
-      } else {
-        text = String(value);
-      }
-      el.textContent = text + suffix;
-    }
-
-    function run(el) {
-      var target = parseInt(el.getAttribute('data-count'), 10);
-      if (isNaN(target)) { return; }
-
-      if (reduced()) { render(el, target); return; }
-
-      var duration = 1200;
-      var start = null;
-
-      function frame(now) {
-        if (start === null) { start = now; }
-        var t = Math.min((now - start) / duration, 1);
-        var eased = 1 - Math.pow(1 - t, 3);          // easeOutCubic
-        render(el, Math.round(target * eased));
-        if (t < 1) { window.requestAnimationFrame(frame); }
-        else { render(el, target); }
-      }
-      window.requestAnimationFrame(frame);
-    }
-
-    if (!('IntersectionObserver' in window)) {
-      nodes.forEach(run);
-      return;
-    }
-
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) { return; }
-        run(entry.target);
-        observer.unobserve(entry.target);
-      });
-    }, { threshold: 0.4 });
-
-    nodes.forEach(function (el) { observer.observe(el); });
-  }());
+  /* Blocks 5 (stat counters) and 6 (hero typewriter) from main are
+     gone on this branch: the stats row and the rotating role are
+     both out of the markup, so there is nothing here to animate.
+     The positioning line is static text in the masthead. */
 
   /* ---------------------------------------------------------
-     6. Hero typewriter.
-        Edits: change the roles array below.
-     --------------------------------------------------------- */
-  (function typewriter() {
-    var el = $('#typewriter');
-    if (!el) { return; }
-
-    var roles = [
-      '.NET & Go',
-      'Kotlin & Android',
-      'Angular & React',
-      'gRPC contracts'
-    ];
-
-    if (reduced() || roles.length < 2) {
-      el.textContent = roles[0];
-      return;
-    }
-
-    var roleIndex = 0;
-    var charIndex = roles[0].length;
-    var deleting = false;
-    var pause = 0;
-
-    function tick() {
-      var word = roles[roleIndex];
-
-      if (!deleting) {
-        charIndex++;
-        if (charIndex >= word.length) {
-          charIndex = word.length;
-          deleting = true;
-          pause = 1900;
-        }
-      } else {
-        charIndex--;
-        if (charIndex <= 0) {
-          deleting = false;
-          roleIndex = (roleIndex + 1) % roles.length;
-          pause = 320;
-        }
-      }
-
-      el.textContent = word.slice(0, charIndex);
-      setTimeout(tick, pause || (deleting ? 34 : 62));
-      pause = 0;
-    }
-
-    setTimeout(tick, 1600);
-  }());
-
-  /* ---------------------------------------------------------
-     7. Copy-to-clipboard
+     5. Copy-to-clipboard
      --------------------------------------------------------- */
   (function copyButtons() {
     $$('[data-copy]').forEach(function (button) {
@@ -298,7 +194,7 @@
   }());
 
   /* ---------------------------------------------------------
-     8. Back to top
+     6. Back to top
      --------------------------------------------------------- */
   (function backToTop() {
     var button = $('#to-top');
@@ -321,7 +217,7 @@
   }());
 
   /* ---------------------------------------------------------
-     9. Footer year
+     7. Footer year
      --------------------------------------------------------- */
   var year = $('#year');
   if (year) { year.textContent = String(new Date().getFullYear()); }
